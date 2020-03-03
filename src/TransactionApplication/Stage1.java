@@ -1,11 +1,11 @@
 package TransactionApplication;
 
-import java.util.logging.*;
+import org.apache.log4j.Logger;
 
 public class Stage1 implements Runnable {
 	
-	public final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+	public final static Logger log = Logger.getLogger(Stage1.class.getName());
+	   
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
