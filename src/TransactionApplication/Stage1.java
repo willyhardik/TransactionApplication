@@ -1,31 +1,34 @@
 package TransactionApplication;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
-public class Stage2 implements Runnable {
-
+public class Stage1 implements Runnable {
+	   
     private QueueImplementation queueImplementation;
-    static private Logger logger = Logger.getLogger(Stage2.class.getName());
+//    private static Logger log = Logger.getLogger(Stage1.class.getName());
+    static private Logger logger = Logger.getLogger(Stage1.class);
 
-    public Stage2(QueueImplementation queueImplementation) {
+    public Stage1(QueueImplementation queueImplementation) {
         this.queueImplementation = queueImplementation;
     }
 
 	@Override
 	public void run() {
 		try {
+//			PropertyConfigurator.configure("log4j.properties");
+
 			while(queueImplementation.getInputQueue().remainingCapacity() > 0) {
 				Message message = queueImplementation.getInputQueue().take();
-				System.out.println("Message from stage 2   " + message);	
+				System.out.println("Message from stage 1   " + message);	
 				logger.debug("Message from stage 1   " + message);
-				queueImplementation.addToOutputQueue(message);	
-				
+				queueImplementation.addToOutputQueue(message);
 			}
 			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		// get data from input queue of queueImplementation
+        // get data from input queue of queueImplementation
         // Process it
         // put it into the output queue of queueImplementation
     }

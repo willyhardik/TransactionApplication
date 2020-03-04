@@ -14,7 +14,11 @@ public class Transaction {
         
         final int MAX_QUEUE_SIZE = 10;
         // Get input data to application from DataSource class here
-        BlockingQueue<Message> inputMessages = new LinkedBlockingQueue<>();
+//        BlockingQueue<Message> inputMessages = new LinkedBlockingQueue<>();
+        
+        DataSource dataSource = new DataSource();
+        BlockingQueue<Message> inputMessages = dataSource.getMessageQueue();
+        
         Stage1 stage1 = new Stage1(new QueueImplementation(inputMessages, new LinkedBlockingQueue<>(),
                                      MAX_QUEUE_SIZE));
         Stage2 stage2 = new Stage2(new QueueImplementation(stage1.getQueueImplementation().getOutputQueue(), new LinkedBlockingQueue<>(),

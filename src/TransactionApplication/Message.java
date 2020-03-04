@@ -7,6 +7,24 @@ public class Message {
 	public String receiverId;
 	public String amount;
 
+	
+
+	@Override
+	public String toString() {
+		return "Message [messageId=" + messageId + ", senderId=" + senderId + ", receiverId=" + receiverId + ", amount="
+				+ amount + "]";
+	}
+
+
+	public Message(String messageId, String senderId, String receiverId, String amount) {
+		super();
+		this.messageId = messageId;
+		this.senderId = senderId;
+		this.receiverId = receiverId;
+		this.amount = amount;
+	}
+	
+	
 	public String getMessageId() {
 		return messageId;
 	}
