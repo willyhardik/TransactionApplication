@@ -16,8 +16,8 @@ public class Stage3 implements Runnable {
 		try {
 			while(queueImplementation.getInputQueue().remainingCapacity() > 0) {
 				Message message = queueImplementation.getInputQueue().take();
-				System.out.println("Message from stage 3   " + message);	
-				logger.debug("Message from stage 1   " + message);
+//				System.out.println("Message from stage 3   " + message);	
+				logger.debug("Message:" + message.getMessageId() + " has started stage 3   " + message);
 				queueImplementation.addToOutputQueue(message);
 				
 			}
