@@ -5,7 +5,7 @@ public class Message {
 	public String messageId;
 	public String senderId;
 	public String receiverId;
-	public String amount;
+	public int amount;
 
 	
 
@@ -16,7 +16,7 @@ public class Message {
 	}
 
 
-	public Message(String messageId, String senderId, String receiverId, String amount) {
+	public Message(String messageId, String senderId, String receiverId, int amount) {
 		super();
 		this.messageId = messageId;
 		this.senderId = senderId;
@@ -49,11 +49,11 @@ public class Message {
 		this.receiverId = receiverId;
 	}
 
-	public String getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 

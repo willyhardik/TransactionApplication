@@ -13,15 +13,15 @@ public class DataSource {
 	}
 
 	private void createMessageObjects() {
-		message = new Message("1","Hardik","Shaunak","1000");		
+		message = new Message("1","Hardik","Shaunak", 1000);		
 		addMessageToQueue(message);
-		message = new Message("2","Shaunak","Dhananjay","2000");		
+		message = new Message("2","Shaunak","Dhananjay",2000);		
 		addMessageToQueue(message);
-		message = new Message("3","Dhananjay","Chirag","3000");		
+		message = new Message("3","Dhananjay","Chirag",-3000);		
 		addMessageToQueue(message);
-		message = new Message("4","Chirag","Juhi","4000");		
+		message = new Message("4","Chirag","Juhi",4000);		
 		addMessageToQueue(message);
-		message = new Message("5","Juhi","Hardik","5000");		
+		message = new Message("5","Juhi","Hardik",5000);		
 		addMessageToQueue(message);
 		
 	}
